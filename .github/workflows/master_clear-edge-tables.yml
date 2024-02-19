@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'clear-edge-tables'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2352543240F142F28D4D4D80AC5202E4 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C6EB9B333008426384A2D1DCC1352AA8 }}
           package: .
