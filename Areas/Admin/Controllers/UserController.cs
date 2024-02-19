@@ -8,6 +8,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace group_web_application_security.Areas.Admin.Controllers
 {
+
     [Area("Admin")]
     [Authorize(Roles = "Admin")]
     public class UserController : Controller

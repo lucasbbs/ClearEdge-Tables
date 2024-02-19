@@ -83,48 +83,48 @@ namespace group_web_application_security.Areas.Customer.Controllers
 
 			foreach (var shoppingCart in ShoppingCartViewModel.ShoppingCartList)
 			{
-
 				shoppingCart.Price = shoppingCart.Table.Price;
 				ShoppingCartViewModel.Order.total_amount += shoppingCart.Price * shoppingCart.Count;
 			}
+			ShoppingCartViewModel.Order.Status = "Pending";
+			ShoppingCartViewModel.Order.PaymentStatus = "Pending";
 
-			if (ModelState.IsValid)
+			if (ShoppingCartViewModel.Order.Name != "" && ShoppingCartViewModel.Order.PhoneNumber != "" && ShoppingCartViewModel.Order.StreetAddress != "" && ShoppingCartViewModel.Order.City != "" && ShoppingCartViewModel.Order.State != "" && ShoppingCartViewModel.Order.PostalCode != ""
+			 )
             {
-                ShoppingCartViewModel.Order.Status = "Pending";
-                ShoppingCartViewModel.Order.PaymentStatus = "Pending";
-
-                _unitOfWork.Order.Add(ShoppingCartViewModel.Order);
-                _unitOfWork.Save();
-
-                return RedirectToAction("Index");
+				_unitOfWork.Order.Add(ShoppingCartViewModel.Order);
+				HttpContext.Session.SetInt32("SessionShoppingCart",
+                _unitOfWork.ShoppingCart.GetAll(u => u.CustomerId == userId).Count());
+				_unitOfWork.Save();
+				return RedirectToAction("Index");
             }
             return View(ShoppingCartViewModel);
         }
         public IActionResult Plus(int shoppingCartId)
         {
-            var shoppingCart = _unitOfWork.ShoppingCart.Get(u => u.Id == shoppingCartId);
+			var shoppingCart = _unitOfWork.ShoppingCart.Get(u => u.Id == shoppingCartId);
             shoppingCart.Count += 1;
             _unitOfWork.ShoppingCart.Update(shoppingCart);
             _unitOfWork.Save();
 
-            foreach (var cart in ShoppingCartViewModel.ShoppingCartList)
-            {
-                OrderItem orderItem = new()
-                {
-                    TableId = cart.TableId,
-                    OrderId = ShoppingCartViewModel.Order.Id,
-                    Price = cart.Price,
-                    Count = cart.Count
-                };
-                _unitOfWork.OrderItem.Add(orderItem);
-                _unitOfWork.Save();
-            }
+    //        foreach (var cart in ShoppingCartViewModel.ShoppingCartList)
+    //        {
+    //            OrderItem orderItem = new()
+    //            {
+    //                TableId = cart.TableId,
+    //                OrderId = ShoppingCartViewModel.Order.Id,
+    //                Price = cart.Price,
+    //                Count = cart.Count
+    //            };
+    //            _unitOfWork.OrderItem.Add(orderItem);
+				//_unitOfWork.Save();
+    //        }
 
             return RedirectToAction("Index");
         }
         public IActionResult Minus(int shoppingCartId)
         {
-            var shoppingCart = _unitOfWork.ShoppingCart.Get(u => u.Id == shoppingCartId);
+			var shoppingCart = _unitOfWork.ShoppingCart.Get(u => u.Id == shoppingCartId);
             if (shoppingCart.Count <= 1)
             {
                 _unitOfWork.ShoppingCart.Remove(shoppingCart);
@@ -141,9 +141,14 @@ namespace group_web_application_security.Areas.Customer.Controllers
 
         public IActionResult Remove(int shoppingCartId)
         {
-            var shoppingCart = _unitOfWork.ShoppingCart.Get(u => u.Id == shoppingCartId);
+			var claimsIdentity = (ClaimsIdentity)User.Identity;
+			var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
+			var shoppingCart = _unitOfWork.ShoppingCart.Get(u => u.Id == shoppingCartId);
             _unitOfWork.ShoppingCart.Remove(shoppingCart);
-            _unitOfWork.Save();
+			_unitOfWork.Save();
+
+			HttpContext.Session.SetInt32("SessionShoppingCart",
+            _unitOfWork.ShoppingCart.GetAll(u => u.CustomerId == userId).Count());
             return RedirectToAction("Index");
         }
     }

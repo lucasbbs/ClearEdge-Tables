@@ -33,8 +33,8 @@ function loadDataTable() {
                     else {
                         return `
                         <div class="text-center">
-                              <a onclick=LockUnlock('${data.id}') class="btn btn-success text-white" style="cursor:pointer; width:100px;">
-                                    <i class="bi bi-unlock-fill"></i>  UnLock
+                              <a onclick=LockUnlock('${data.id}') class="btn btn-success text-white" style="cursor:pointer; width:100px; white-space:nowrap">
+                                    <i class="bi bi-unlock-fill"></i> UnLock
                                 </a>
                                 <a href="/admin/user/RoleManagment?userId=${data.id}" class="btn btn-danger text-white" style="cursor:pointer; width:150px;">
                                      <i class="bi bi-pencil-square"></i> Permission
