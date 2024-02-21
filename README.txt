@@ -8,7 +8,7 @@ Lucas Breno de Souza Noronha Braga:
 	- Orders
 	- OrderDetails
 Himani
-- Reserached some related business to tables.
+- Reserached some businesses related to tables.
 	- Transformer Table - https://ca.transformertable.com/pages/extendable-dining-tables-and-sets?msclkid=ad4b6ef8b3861f3e20360b364727617a&utm_source=bing&utm_medium=cpc&utm_campaign=M%20Core%20Brand%20(exact)%20-%20CA&utm_term=transformer%20table&utm_content=Core%20Brand%20-%20Exact
 	- Woodcraft Furniture - https://www.woodcraft.ca/
 	- EQ3 - https://www.eq3.com/ca/en/shopwithus/eq3-locations
