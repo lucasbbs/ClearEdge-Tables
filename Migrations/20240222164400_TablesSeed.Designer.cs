@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using group_web_application_security.Data;
 
@@ -11,9 +12,11 @@ using group_web_application_security.Data;
 namespace group_web_application_security.Migrations
 {
     [DbContext(typeof(group_web_application_securityContext))]
-    partial class group_web_application_securityContextModelSnapshot : ModelSnapshot
+    [Migration("20240222164400_TablesSeed")]
+    partial class TablesSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
