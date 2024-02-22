@@ -21,7 +21,8 @@ Himani
 	- EQ3 - https://www.eq3.com/ca/en/shopwithus/eq3-locations
 	- Amisco - https://www.amisco.com/en_ca/
 	- The Table Company https://www.thetablecompany.com/about-us
-:
+
+Honey Honey:
 - Helped in developing the Entity-Diagram Model as well as helped Himani researching the business related to tables.
 
 2024-02-17 2359
@@ -49,3 +50,27 @@ Honey Honey:
 Himani Gajjar:
 - Placed logo
 
+Himani Gajjar 
+- took below entities from refferenced companies 
+
+1. Transformer Table :
+- Colours of tables 
+- Type of tables 
+
+2. Woodcraft Furniture:
+- Discription of tables 
+- Materials of tables 
+
+3. EQ3
+- Dimension of the tables 
+
+4. Amisco:
+- Table ID
+- Model option 
+- Colour option 
+
+5. The Table Company:
+- size of the table
+
+username: admin@example.com
+password: secret
