@@ -37,3 +37,8 @@ Lucas Breno de Souza Noronha Braga:
 2024-02-20 2019
 Honey Honey:
 - Writing documentation
+
+2024-02-22 0909
+Himani Gajjar:
+
+- Placed logo
