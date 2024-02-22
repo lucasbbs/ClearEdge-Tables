@@ -1,4 +1,11 @@
-﻿2024-02-15 1545
+﻿CYB-206 Web Application Security
+Group Name: mu
+Group Members Name:
+	1. Lucas Breno de Souza Noronha Braga
+	2. Himani Gajjar
+	3. Honey Honey
+
+2024-02-15 1545
 Lucas Breno de Souza Noronha Braga:
 - Come up with the Entity-Diagram Model
 - Entities:
@@ -14,7 +21,7 @@ Himani
 	- EQ3 - https://www.eq3.com/ca/en/shopwithus/eq3-locations
 	- Amisco - https://www.amisco.com/en_ca/
 	- The Table Company https://www.thetablecompany.com/about-us
-Honey Honey:
+:
 - Helped in developing the Entity-Diagram Model as well as helped Himani researching the business related to tables.
 
 2024-02-17 2359
@@ -40,5 +47,5 @@ Honey Honey:
 
 2024-02-22 0909
 Himani Gajjar:
-
 - Placed logo
+
