@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace group_web_application_security.Models.ViewModels
+namespace ClearEdge_Tables.Models.ViewModels
 {
     public class RoleManagementViewModel
     {

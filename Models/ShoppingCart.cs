@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace group_web_application_security.Models
+namespace ClearEdge_Tables.Models
 {
     public class ShoppingCart
     {

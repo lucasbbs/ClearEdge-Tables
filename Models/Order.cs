@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace group_web_application_security.Models
+namespace ClearEdge_Tables.Models
 {
     public class Order
     {

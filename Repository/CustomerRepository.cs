@@ -1,13 +1,13 @@
-﻿using group_web_application_security.Data;
-using group_web_application_security.Models;
-using group_web_application_security.Repository.IRepository;
+﻿using ClearEdge_Tables.Data;
+using ClearEdge_Tables.Models;
+using ClearEdge_Tables.Repository.IRepository;
 using System.Linq.Expressions;
-namespace group_web_application_security.Repository
+namespace ClearEdge_Tables.Repository
 {
     public class CustomerRepository : Repository<Customer>, ICustomerRepository
     {
-        private readonly group_web_application_securityContext _context;
-        public CustomerRepository(group_web_application_securityContext context) :base(context)
+        private readonly ClearEdge_TablesContext _context;
+        public CustomerRepository(ClearEdge_TablesContext context) :base(context)
         {
             _context = context;
         }

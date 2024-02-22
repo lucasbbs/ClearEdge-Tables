@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace group_web_application_security.Migrations
+namespace ClearEdge_Tables.Migrations
 {
     /// <inheritdoc />
     public partial class SeedRoles : Migration

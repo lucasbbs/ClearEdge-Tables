@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using group_web_application_security.Data;
-using group_web_application_security.Models;
-using group_web_application_security.Repository.IRepository;
+using ClearEdge_Tables.Data;
+using ClearEdge_Tables.Models;
+using ClearEdge_Tables.Repository.IRepository;
 
-namespace group_web_application_security.Areas.Admin.Controllers
+namespace ClearEdge_Tables.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class TablesController : Controller

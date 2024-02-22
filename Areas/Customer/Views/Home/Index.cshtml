@@ -21,7 +21,7 @@
                             </div>
                             <div class="pl-1">
                                 <p class="text-dark text-opacity-75 text-center">
-                                    As low as: @table.Price.ToString("c")
+                                    Only @table.Price.ToString("c")
                                 </p>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                                 asp-route-tableId="@table.Id"
                                 asp-action="Details"
                                 class="btn btn-primary bg-gradient border-0 form-control">
-                                Details
+                                <i class="bi bi-currency-dollar"></i> Add to cart
                             </a>
                         </div>
                     </div>

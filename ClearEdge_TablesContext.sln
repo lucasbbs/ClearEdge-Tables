@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "group_web_application_security", "group_web_application_security.csproj", "{6C6D8CEB-B90A-4F92-AFED-5018FF61CEC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClearEdge-Tables", "ClearEdge-Tables.csproj", "{6C6D8CEB-B90A-4F92-AFED-5018FF61CEC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

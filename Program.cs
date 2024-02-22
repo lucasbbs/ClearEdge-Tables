@@ -1,15 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using group_web_application_security.Data;
+using ClearEdge_Tables.Data;
 using Microsoft.AspNetCore.Identity;
-using group_web_application_security.Repository.IRepository;
-using group_web_application_security.Repository;
-using group_web_application_security.Models;
+using ClearEdge_Tables.Repository.IRepository;
+using ClearEdge_Tables.Repository;
+using ClearEdge_Tables.Models;
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<group_web_application_securityContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("group_web_application_securityContext") ?? throw new InvalidOperationException("Connection string 'group_web_application_securityContext' not found.")));
+builder.Services.AddDbContext<ClearEdge_TablesContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ClearEdge_TablesContext") ?? throw new InvalidOperationException("Connection string 'ClearEdge_TablesContext' not found.")));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(/*options => options.SignIn.RequireConfirmedAccount = true*/).AddEntityFrameworkStores<group_web_application_securityContext>().AddDefaultTokenProviders().AddDefaultUI();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(/*options => options.SignIn.RequireConfirmedAccount = true*/).AddEntityFrameworkStores<ClearEdge_TablesContext>().AddDefaultTokenProviders().AddDefaultUI();
 
 builder.Services.AddRazorPages();
 builder.Services.AddDistributedMemoryCache();

@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 
-namespace group_web_application_security.Areas.Identity.Pages.Account
+namespace ClearEdge_Tables.Areas.Identity.Pages.Account
 {
     public class ConfirmEmailModel : PageModel
     {

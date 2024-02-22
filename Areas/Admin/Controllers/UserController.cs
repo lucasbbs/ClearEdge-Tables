@@ -1,12 +1,12 @@
-﻿using group_web_application_security.Models.ViewModels;
-using group_web_application_security.Repository.IRepository;
+﻿using ClearEdge_Tables.Models.ViewModels;
+using ClearEdge_Tables.Repository.IRepository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
-namespace group_web_application_security.Areas.Admin.Controllers
+namespace ClearEdge_Tables.Areas.Admin.Controllers
 {
 
     [Area("Admin")]
@@ -52,7 +52,7 @@ namespace group_web_application_security.Areas.Admin.Controllers
             string oldRole = _userManager.GetRolesAsync(_unitOfWork.Customer.Get(u => u.Id == roleManagmentVM.ApplicationUser.Id))
                     .GetAwaiter().GetResult().FirstOrDefault();
 
-            group_web_application_security.Models.Customer applicationUser = _unitOfWork.Customer.Get(u => u.Id == roleManagmentVM.ApplicationUser.Id);
+            ClearEdge_Tables.Models.Customer applicationUser = _unitOfWork.Customer.Get(u => u.Id == roleManagmentVM.ApplicationUser.Id);
 
 
             if (!(roleManagmentVM.ApplicationUser.Role == oldRole))
@@ -74,7 +74,7 @@ namespace group_web_application_security.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            List<group_web_application_security.Models.Customer> objUserList = _unitOfWork.Customer.GetAll().ToList();
+            List<ClearEdge_Tables.Models.Customer> objUserList = _unitOfWork.Customer.GetAll().ToList();
 
             foreach (var user in objUserList)
             {

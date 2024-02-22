@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using group_web_application_security.Data;
+using ClearEdge_Tables.Data;
 
 #nullable disable
 
-namespace group_web_application_security.Migrations
+namespace ClearEdge_Tables.Migrations
 {
-    [DbContext(typeof(group_web_application_securityContext))]
-    partial class group_web_application_securityContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ClearEdge_TablesContext))]
+    partial class ClearEdge_TablesContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -250,7 +250,7 @@ namespace group_web_application_security.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.Order", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -322,7 +322,7 @@ namespace group_web_application_security.Migrations
                     b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.OrderItem", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.OrderItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -351,7 +351,7 @@ namespace group_web_application_security.Migrations
                     b.ToTable("OrderItem");
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.ShoppingCart", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.ShoppingCart", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -378,7 +378,7 @@ namespace group_web_application_security.Migrations
                     b.ToTable("ShoppingCart");
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.Table", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.Table", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -431,9 +431,91 @@ namespace group_web_application_security.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Table");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Category = "Office Desk",
+                            Color = "Brown",
+                            Description = "Modern office desk with wooden finish",
+                            Dimensions = "48x24x30",
+                            ImageUrl = "https://th.bing.com/th/id/R.c294eea134f31d6be8df066eecbd9d1f?rik=5tiwzsNCCGjbJQ&pid=ImgRaw&r=0",
+                            Manufacturer = "Office Furn.",
+                            Material = "Wood",
+                            Name = "Beautiful Office Desk",
+                            Origin_Country = "USA",
+                            Price = 199.99000000000001,
+                            StockQuantity = 20,
+                            Weight = 40.0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Category = "Dining Table",
+                            Color = "White",
+                            Description = "Elegant dining table with glass top",
+                            Dimensions = "60x36x30",
+                            ImageUrl = "https://images.globalindustrial.com/images/pdp/TRADITIONS7PCSW6-alt1.webp?t=1707866000006",
+                            Manufacturer = "Elegant Furn.",
+                            Material = "Glass",
+                            Name = "Nice Dining Table",
+                            Origin_Country = "ITA",
+                            Price = 399.99000000000001,
+                            StockQuantity = 15,
+                            Weight = 60.0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Category = "Coffe Table",
+                            Color = "Black",
+                            Description = "Contemporary coffee table with metal legs",
+                            Dimensions = "36x24x18",
+                            ImageUrl = "https://menterarchitects.com/wp-content/uploads/2017/09/elegant-stylish-round-coffee-table-with-storage-dark-brown-finish-throughout-round-coffee-tables-with-drawers.jpg",
+                            Manufacturer = "Moda Furn.",
+                            Material = "Metal",
+                            Name = "Round Coffee Table",
+                            Origin_Country = "CHN",
+                            Price = 149.99000000000001,
+                            StockQuantity = 25,
+                            Weight = 30.0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Category = "Side Table",
+                            Color = "Cherry",
+                            Description = "Compact bedside table with drawer",
+                            Dimensions = "20x18x24",
+                            ImageUrl = "https://th.bing.com/th/id/OIP.ryxkLB0B32IV3CNKfs1RKgHaFj?rs=1&pid=ImgDetMain",
+                            Manufacturer = "Home Basics",
+                            Material = "Wood",
+                            Name = "Compact Side Table",
+                            Origin_Country = "USA",
+                            Price = 79.989999999999995,
+                            StockQuantity = 30,
+                            Weight = 25.0
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Category = "Console Table",
+                            Color = "Oak",
+                            Description = "Modern console table with storage shelves",
+                            Dimensions = "48x16x30",
+                            ImageUrl = "https://th.bing.com/th?id=OPHS.amh4zdZ11NPffQ474C474&w=592&h=550&o=5&dpr=1.5&pid=21.1",
+                            Manufacturer = "Trendy Designs",
+                            Material = "Metal/Wood",
+                            Name = "Console Table with Storage",
+                            Origin_Country = "CAN",
+                            Price = 299.99000000000001,
+                            StockQuantity = 10,
+                            Weight = 35.0
+                        });
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.Customer", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.Customer", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -453,9 +535,6 @@ namespace group_web_application_security.Migrations
                     b.Property<string>("StreetAddress")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("isAdmin")
-                        .HasColumnType("bit");
-
                     b.HasDiscriminator().HasValue("Customer");
 
                     b.HasData(
@@ -463,19 +542,18 @@ namespace group_web_application_security.Migrations
                         {
                             Id = "61e5296d-058a-4ea2-a283-69c8a93a407a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "917c3a46-725f-4387-a20f-1aeef9226244",
+                            ConcurrencyStamp = "a6927633-8741-4097-9f21-ccf41ec5f0ba",
                             Email = "admin@example.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@EXAMPLE.COM",
                             NormalizedUserName = "ADMIN@EXAMPLE.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAELH/LNhcKFdxA2oMpcX84EcSPJEEXFFY83pzZMxptYOqSX542oEzIqL6M6MGNRMDFA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFJx76YhR3JvFNJ5G8kkpZ5ZeUC1bA8/ON+fmmpK6VvR3uSSlGY8L/4G0kBXzBKM1A==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
                             UserName = "admin@example.com",
-                            Name = "Admin",
-                            isAdmin = true
+                            Name = "Admin"
                         });
                 });
 
@@ -530,9 +608,9 @@ namespace group_web_application_security.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.Order", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.Order", b =>
                 {
-                    b.HasOne("group_web_application_security.Models.Customer", "Customer")
+                    b.HasOne("ClearEdge_Tables.Models.Customer", "Customer")
                         .WithMany()
                         .HasForeignKey("customerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -541,15 +619,15 @@ namespace group_web_application_security.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.OrderItem", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.OrderItem", b =>
                 {
-                    b.HasOne("group_web_application_security.Models.Order", "Order")
+                    b.HasOne("ClearEdge_Tables.Models.Order", "Order")
                         .WithMany()
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("group_web_application_security.Models.Table", "Table")
+                    b.HasOne("ClearEdge_Tables.Models.Table", "Table")
                         .WithMany()
                         .HasForeignKey("TableId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -560,15 +638,15 @@ namespace group_web_application_security.Migrations
                     b.Navigation("Table");
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.ShoppingCart", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.ShoppingCart", b =>
                 {
-                    b.HasOne("group_web_application_security.Models.Customer", "Customer")
+                    b.HasOne("ClearEdge_Tables.Models.Customer", "Customer")
                         .WithMany()
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("group_web_application_security.Models.Table", "Table")
+                    b.HasOne("ClearEdge_Tables.Models.Table", "Table")
                         .WithMany()
                         .HasForeignKey("TableId")
                         .OnDelete(DeleteBehavior.Cascade)

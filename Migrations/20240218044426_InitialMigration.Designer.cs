@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using group_web_application_security.Data;
+using ClearEdge_Tables.Data;
 
 #nullable disable
 
-namespace group_web_application_security.Migrations
+namespace ClearEdge_Tables.Migrations
 {
-    [DbContext(typeof(group_web_application_securityContext))]
+    [DbContext(typeof(ClearEdge_TablesContext))]
     [Migration("20240218044426_InitialMigration")]
     partial class InitialMigration
     {
@@ -24,7 +24,7 @@ namespace group_web_application_security.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("group_web_application_security.Models.Table", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.Table", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
