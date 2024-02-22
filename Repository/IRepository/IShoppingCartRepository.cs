@@ -1,6 +1,6 @@
-﻿using group_web_application_security.Models;
+﻿using ClearEdge_Tables.Models;
 
-namespace group_web_application_security.Repository.IRepository
+namespace ClearEdge_Tables.Repository.IRepository
 {
     public interface IShoppingCartRepository : IRepository<ShoppingCart>
     {

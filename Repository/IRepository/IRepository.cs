@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace group_web_application_security.Repository.IRepository
+namespace ClearEdge_Tables.Repository.IRepository
 {
     public interface IRepository<T> where T : class
     {

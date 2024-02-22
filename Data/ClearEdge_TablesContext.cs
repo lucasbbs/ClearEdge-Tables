@@ -1,22 +1,22 @@
-﻿using group_web_application_security.Models;
+﻿using ClearEdge_Tables.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace group_web_application_security.Data
+namespace ClearEdge_Tables.Data
 {
-    public class group_web_application_securityContext : IdentityDbContext
+    public class ClearEdge_TablesContext : IdentityDbContext
     {
-        public group_web_application_securityContext (DbContextOptions<group_web_application_securityContext> options)
+        public ClearEdge_TablesContext (DbContextOptions<ClearEdge_TablesContext> options)
             : base(options)
         {
         }
 
-        public DbSet<group_web_application_security.Models.Table> Table { get; set; } = default!;
-        public DbSet<group_web_application_security.Models.Order> Order { get; set; } = default!;
-        public DbSet<group_web_application_security.Models.Customer> Customer { get; set; }
-        public DbSet<group_web_application_security.Models.ShoppingCart> ShoppingCart { get; set; }
-        public DbSet<group_web_application_security.Models.OrderItem> OrderItem { get; set; }
+        public DbSet<ClearEdge_Tables.Models.Table> Table { get; set; } = default!;
+        public DbSet<ClearEdge_Tables.Models.Order> Order { get; set; } = default!;
+        public DbSet<ClearEdge_Tables.Models.Customer> Customer { get; set; }
+        public DbSet<ClearEdge_Tables.Models.ShoppingCart> ShoppingCart { get; set; }
+        public DbSet<ClearEdge_Tables.Models.OrderItem> OrderItem { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

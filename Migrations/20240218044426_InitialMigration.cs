@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace group_web_application_security.Migrations
+namespace ClearEdge_Tables.Migrations
 {
     /// <inheritdoc />
     public partial class InitialMigration : Migration

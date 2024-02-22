@@ -21,7 +21,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Logging;
 
-namespace group_web_application_security.Areas.Identity.Pages.Account
+namespace ClearEdge_Tables.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
     {
@@ -129,7 +129,7 @@ namespace group_web_application_security.Areas.Identity.Pages.Account
                     await _userManager.AddToRoleAsync(user, "User");
                     string updateQuery = "UPDATE AspNetUsers SET Discriminator = 'Customer' WHERE Id IN (SELECT Id FROM AspNetUsers WHERE Id = " + user.Id + ");";
 
-                    using (SqlConnection connection = new SqlConnection("Server=(localdb)\\mssqllocaldb;Database=group_web_application_securityContext-044c0649-1505-4085-b8cd-35f4f840946c;Trusted_Connection=True;MultipleActiveResultSets=true"))
+                    using (SqlConnection connection = new SqlConnection("Server=(localdb)\\mssqllocaldb;Database=ClearEdge_TablesContext-044c0649-1505-4085-b8cd-35f4f840946c;Trusted_Connection=True;MultipleActiveResultSets=true"))
                     {
                         SqlCommand command = new SqlCommand(updateQuery, connection);
 

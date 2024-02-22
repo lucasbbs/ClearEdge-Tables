@@ -1,9 +1,9 @@
 ﻿
-using group_web_application_security.Repository.IRepository;
+using ClearEdge_Tables.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace group_web_application_security.ViewComponents
+namespace ClearEdge_Tables.ViewComponents
 {
     public class ShoppingCartViewComponent : ViewComponent
     {
