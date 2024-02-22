@@ -1,11 +1,11 @@
-﻿using group_web_application_security.Models;
-using group_web_application_security.Models.ViewModels;
-using group_web_application_security.Repository.IRepository;
+﻿using ClearEdge_Tables.Models;
+using ClearEdge_Tables.Models.ViewModels;
+using ClearEdge_Tables.Repository.IRepository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace group_web_application_security.Areas.Customer.Controllers
+namespace ClearEdge_Tables.Areas.Customer.Controllers
 {
     [Area("customer")]
     [Authorize]

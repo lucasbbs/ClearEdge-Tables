@@ -12,8 +12,8 @@ using ClearEdge_Tables.Data;
 namespace ClearEdge_Tables.Migrations
 {
     [DbContext(typeof(ClearEdge_TablesContext))]
-    [Migration("20240219011559_AddColumnIsAdminCostumersTable")]
-    partial class AddColumnIsAdminCostumersTable
+    [Migration("20240222164400_TablesSeed")]
+    partial class TablesSeed
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,6 +50,20 @@ namespace ClearEdge_Tables.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -179,12 +193,10 @@ namespace ClearEdge_Tables.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -213,6 +225,13 @@ namespace ClearEdge_Tables.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "61e5296d-058a-4ea2-a283-69c8a93a407a",
+                            RoleId = "1"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -221,12 +240,10 @@ namespace ClearEdge_Tables.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -417,6 +434,88 @@ namespace ClearEdge_Tables.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Table");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Category = "Office Desk",
+                            Color = "Brown",
+                            Description = "Modern office desk with wooden finish",
+                            Dimensions = "48x24x30",
+                            ImageUrl = "https://th.bing.com/th/id/R.c294eea134f31d6be8df066eecbd9d1f?rik=5tiwzsNCCGjbJQ&pid=ImgRaw&r=0",
+                            Manufacturer = "Office Furn.",
+                            Material = "Wood",
+                            Name = "Beautiful Office Desk",
+                            Origin_Country = "USA",
+                            Price = 199.99000000000001,
+                            StockQuantity = 20,
+                            Weight = 40.0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Category = "Dining Table",
+                            Color = "White",
+                            Description = "Elegant dining table with glass top",
+                            Dimensions = "60x36x30",
+                            ImageUrl = "https://images.globalindustrial.com/images/pdp/TRADITIONS7PCSW6-alt1.webp?t=1707866000006",
+                            Manufacturer = "Elegant Furn.",
+                            Material = "Glass",
+                            Name = "Nice Dining Table",
+                            Origin_Country = "ITA",
+                            Price = 399.99000000000001,
+                            StockQuantity = 15,
+                            Weight = 60.0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Category = "Coffe Table",
+                            Color = "Black",
+                            Description = "Contemporary coffee table with metal legs",
+                            Dimensions = "36x24x18",
+                            ImageUrl = "https://menterarchitects.com/wp-content/uploads/2017/09/elegant-stylish-round-coffee-table-with-storage-dark-brown-finish-throughout-round-coffee-tables-with-drawers.jpg",
+                            Manufacturer = "Moda Furn.",
+                            Material = "Metal",
+                            Name = "Round Coffee Table",
+                            Origin_Country = "CHN",
+                            Price = 149.99000000000001,
+                            StockQuantity = 25,
+                            Weight = 30.0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Category = "Side Table",
+                            Color = "Cherry",
+                            Description = "Compact bedside table with drawer",
+                            Dimensions = "20x18x24",
+                            ImageUrl = "https://th.bing.com/th/id/OIP.ryxkLB0B32IV3CNKfs1RKgHaFj?rs=1&pid=ImgDetMain",
+                            Manufacturer = "Home Basics",
+                            Material = "Wood",
+                            Name = "Compact Side Table",
+                            Origin_Country = "USA",
+                            Price = 79.989999999999995,
+                            StockQuantity = 30,
+                            Weight = 25.0
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Category = "Console Table",
+                            Color = "Oak",
+                            Description = "Modern console table with storage shelves",
+                            Dimensions = "48x16x30",
+                            ImageUrl = "https://th.bing.com/th?id=OPHS.amh4zdZ11NPffQ474C474&w=592&h=550&o=5&dpr=1.5&pid=21.1",
+                            Manufacturer = "Trendy Designs",
+                            Material = "Metal/Wood",
+                            Name = "Console Table with Storage",
+                            Origin_Country = "CAN",
+                            Price = 299.99000000000001,
+                            StockQuantity = 10,
+                            Weight = 35.0
+                        });
                 });
 
             modelBuilder.Entity("ClearEdge_Tables.Models.Customer", b =>
@@ -439,10 +538,26 @@ namespace ClearEdge_Tables.Migrations
                     b.Property<string>("StreetAddress")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("isAdmin")
-                        .HasColumnType("bit");
-
                     b.HasDiscriminator().HasValue("Customer");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "61e5296d-058a-4ea2-a283-69c8a93a407a",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "a6927633-8741-4097-9f21-ccf41ec5f0ba",
+                            Email = "admin@example.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@EXAMPLE.COM",
+                            NormalizedUserName = "ADMIN@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFJx76YhR3JvFNJ5G8kkpZ5ZeUC1bA8/ON+fmmpK6VvR3uSSlGY8L/4G0kBXzBKM1A==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "admin@example.com",
+                            Name = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

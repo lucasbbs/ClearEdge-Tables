@@ -1,4 +1,4 @@
-namespace group_web_application_security.Models
+namespace ClearEdge_Tables.Models
 {
     public class ErrorViewModel
     {

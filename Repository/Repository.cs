@@ -1,15 +1,15 @@
-﻿using group_web_application_security.Data;
-using group_web_application_security.Repository.IRepository;
+﻿using ClearEdge_Tables.Data;
+using ClearEdge_Tables.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace group_web_application_security.Repository
+namespace ClearEdge_Tables.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly group_web_application_securityContext _context;
+        private readonly ClearEdge_TablesContext _context;
         internal DbSet<T> Set;
-        public Repository(group_web_application_securityContext context)
+        public Repository(ClearEdge_TablesContext context)
         {
             _context = context;
             this.Set = _context.Set<T>();

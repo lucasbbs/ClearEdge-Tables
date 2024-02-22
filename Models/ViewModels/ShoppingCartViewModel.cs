@@ -1,6 +1,6 @@
-﻿using group_web_application_security.Models;
+﻿using ClearEdge_Tables.Models;
 
-namespace group_web_application_security.Models.ViewModels
+namespace ClearEdge_Tables.Models.ViewModels
 {
     public class ShoppingCartViewModel 
     {

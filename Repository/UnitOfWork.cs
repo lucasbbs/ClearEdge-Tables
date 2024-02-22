@@ -1,18 +1,18 @@
-﻿using group_web_application_security.Data;
-using group_web_application_security.Models;
-using group_web_application_security.Repository.IRepository;
+﻿using ClearEdge_Tables.Data;
+using ClearEdge_Tables.Models;
+using ClearEdge_Tables.Repository.IRepository;
 
-namespace group_web_application_security.Repository
+namespace ClearEdge_Tables.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private group_web_application_securityContext _context;
+        private ClearEdge_TablesContext _context;
         public ITableRepository Table { get; private set; }
         public ICustomerRepository Customer {  get; private set; }
         public IShoppingCartRepository ShoppingCart { get; private set; }
         public IOrderRepository Order { get; private set; }
         public IOrderItemRepository OrderItem { get; private set; }
-        public UnitOfWork(group_web_application_securityContext context)
+        public UnitOfWork(ClearEdge_TablesContext context)
         {
             _context = context;
             ShoppingCart = new ShoppingCartRepository(_context);

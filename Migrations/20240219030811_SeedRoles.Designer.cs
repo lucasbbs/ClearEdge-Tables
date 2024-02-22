@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using group_web_application_security.Data;
+using ClearEdge_Tables.Data;
 
 #nullable disable
 
-namespace group_web_application_security.Migrations
+namespace ClearEdge_Tables.Migrations
 {
-    [DbContext(typeof(group_web_application_securityContext))]
+    [DbContext(typeof(ClearEdge_TablesContext))]
     [Migration("20240219030811_SeedRoles")]
     partial class SeedRoles
     {
@@ -246,7 +246,7 @@ namespace group_web_application_security.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.Order", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -318,7 +318,7 @@ namespace group_web_application_security.Migrations
                     b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.OrderItem", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.OrderItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -347,7 +347,7 @@ namespace group_web_application_security.Migrations
                     b.ToTable("OrderItem");
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.ShoppingCart", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.ShoppingCart", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -374,7 +374,7 @@ namespace group_web_application_security.Migrations
                     b.ToTable("ShoppingCart");
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.Table", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.Table", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -429,7 +429,7 @@ namespace group_web_application_security.Migrations
                     b.ToTable("Table");
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.Customer", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.Customer", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -506,9 +506,9 @@ namespace group_web_application_security.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.Order", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.Order", b =>
                 {
-                    b.HasOne("group_web_application_security.Models.Customer", "Customer")
+                    b.HasOne("ClearEdge_Tables.Models.Customer", "Customer")
                         .WithMany()
                         .HasForeignKey("customerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -517,15 +517,15 @@ namespace group_web_application_security.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.OrderItem", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.OrderItem", b =>
                 {
-                    b.HasOne("group_web_application_security.Models.Order", "Order")
+                    b.HasOne("ClearEdge_Tables.Models.Order", "Order")
                         .WithMany()
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("group_web_application_security.Models.Table", "Table")
+                    b.HasOne("ClearEdge_Tables.Models.Table", "Table")
                         .WithMany()
                         .HasForeignKey("TableId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -536,15 +536,15 @@ namespace group_web_application_security.Migrations
                     b.Navigation("Table");
                 });
 
-            modelBuilder.Entity("group_web_application_security.Models.ShoppingCart", b =>
+            modelBuilder.Entity("ClearEdge_Tables.Models.ShoppingCart", b =>
                 {
-                    b.HasOne("group_web_application_security.Models.Customer", "Customer")
+                    b.HasOne("ClearEdge_Tables.Models.Customer", "Customer")
                         .WithMany()
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("group_web_application_security.Models.Table", "Table")
+                    b.HasOne("ClearEdge_Tables.Models.Table", "Table")
                         .WithMany()
                         .HasForeignKey("TableId")
                         .OnDelete(DeleteBehavior.Cascade)
