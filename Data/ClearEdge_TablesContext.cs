@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Drawing;
 
 namespace ClearEdge_Tables.Data
 {
@@ -107,6 +108,85 @@ namespace ClearEdge_Tables.Data
                     Manufacturer = "Trendy Designs",
                     Origin_Country = "CAN",
                     ImageUrl = "https://th.bing.com/th?id=OPHS.amh4zdZ11NPffQ474C474&w=592&h=550&o=5&dpr=1.5&pid=21.1"
+                },
+                new Table {
+                    Id = 6,
+                    Name = "Foldable Dining Table",
+                    Category = "Dining Table",
+                    Description = "Space-saving dining table that can be folded",
+                    Price = 299.99,
+                    StockQuantity = 10,
+                    Material = "Wood",
+                    Color = "Walnut",
+                    Dimensions = "42x42x30",
+                    Weight = 50,
+                    Manufacturer = "SpaceSaver",
+                    Origin_Country = "GBR",
+                    ImageUrl = "https://assets.wfcdn.com/im/65618480/compr-r85/1711/171159538/47-rectangular-folding-dining-table.jpg"
+                    },
+                new Table
+                {
+                    Id= 7,
+                    Name = "Adjustable Height Desk",
+                    Category = "Office Desk",
+                    Description = "Desk with adjustable height for ergonomic comfort",
+                    Price = 249.99,
+                    StockQuantity = 15,
+                    Material = "Metal/Wood",
+                    Color = "Silver",
+                    Dimensions = "60x30x28",
+                    Weight = 45,
+                    Manufacturer = "ErgoFurn",
+                    Origin_Country = "DEU",
+                    ImageUrl = "https://i5.walmartimages.com/asr/b92290d2-6409-495a-8ed1-82bb15c7e8ce.bd4d752f4ee48044b2df33b48504b511.jpeg"
+                },
+                new Table
+                {
+                    Id = 8,
+                    Name = "Outdoor Picnic Table",
+                    Category = "Picnic Table",
+                    Description = "Sturdy picnic table for outdoor gatherings",
+                    Price = 199.99,
+                    StockQuantity = 8,
+                    Material = "Plastic",
+                    Color = "Green",
+                    Dimensions = "72x60x28",
+                    Weight = 70,
+                    Manufacturer = "Outdoor Essentials",
+                    Origin_Country = "FRA",
+                    ImageUrl = "https://barcoproducts.sirv.com/magento/catalog/product/P/T/PT-54.jpg?q=80&canvas.width=100.0000%25&canvas.height=100.0000%25&canvas.color=ffffff&w=500&h=0&scale.option=fill"
+                },
+                new Table
+                {
+                    Id= 9,
+                    Name = "Modern Coffee Table",
+                    Category = "Coffee Table",
+                    Description = "Sleek coffee table with minimalist design",
+                    Price = 179.99,
+                    StockQuantity = 20,
+                    Material = "Metal/Glass",
+                    Color = "Chrome",
+                    Dimensions = "40x24x18",
+                    Weight = 35,
+                    Manufacturer = "ModernLiving",
+                    Origin_Country = "ESP",
+                    ImageUrl = "https://th.bing.com/th/id/OIP.vmkIrsWljBavb1l5zb4U2AHaHa?rs=1&pid=ImgDetMain"
+                },
+                new Table
+                {
+                    Id= 10,
+                    Name = "Rustic Farmhouse Table",
+                    Category = "Dining Table",
+                    Description = "Rustic farmhouse dining table with distressed finish",
+                    Price = 449.99,
+                    StockQuantity = 12,
+                    Material = "Wood",
+                    Color = "Distressed White",
+                    Dimensions = "72x42x30",
+                    Weight = 80,
+                    Manufacturer = "Rustic Charm",
+                    Origin_Country = "CAN",
+                    ImageUrl = "https://assets.wfcdn.com/im/40787303/resize-h445%5Ecompr-r85/1225/122579962/Alena+Extendable+Dining+Table.jpg"
                 }
             );
 
