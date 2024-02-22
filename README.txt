@@ -40,5 +40,11 @@ Honey Honey:
 
 2024-02-22 0909
 Himani Gajjar:
-
 - Placed logo
+
+Lucas Breno de Souza Noronha Braga:
+- add minor changes on home page
+- added table seed (database for tables)
+
+Honey Honey:
+- Refactor the project to match the name ClearEdge Tables
