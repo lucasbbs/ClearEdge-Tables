@@ -46,7 +46,39 @@ Lucas Breno de Souza Noronha Braga:
 Honey Honey:
 - Writing documentation
 
+Lucas
+Add minor changes on homepage
+Add table seeds
+Honey honey
+Reafactor project
+
 2024-02-22 0909
 Himani Gajjar:
 - Placed logo
+
+Himani Gajjar 
+- took below entities from refferenced companies 
+
+1. Transformer Table :
+- Colours of tables 
+- Type of tables 
+
+2. Woodcraft Furniture:
+- Discription of tables 
+- Materials of tables 
+
+3. EQ3
+- Dimension of the tables 
+
+4. Amisco:
+- Table ID
+- Model option 
+- Colour option 
+
+5. The Table Company:
+- size of the table
+
+To register a table signin with the following credentials and access Content Management
+username: admin@example.com
+password: secret
 
