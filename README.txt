@@ -82,3 +82,5 @@ To register a table signin with the following credentials and access Content Man
 username: admin@example.com
 password: secret
 
+Initial Migration:
+20240218044426_InitialMigration
