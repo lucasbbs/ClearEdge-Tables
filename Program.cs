@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using ClearEdge_Tables.Repository.IRepository;
 using ClearEdge_Tables.Repository;
 using ClearEdge_Tables.Models;
+using ClearEdge_Tables.Data.DbInitializer;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ClearEdge_TablesContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ClearEdge_TablesContext") ?? throw new InvalidOperationException("Connection string 'ClearEdge_TablesContext' not found.")));
@@ -13,6 +14,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(/*options => options.Si
 
 builder.Services.AddRazorPages();
 builder.Services.AddDistributedMemoryCache();
+builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 builder.Services.AddSession(options => {
     options.IdleTimeout = TimeSpan.FromMinutes(100);
     options.Cookie.HttpOnly = true;
@@ -35,6 +37,7 @@ if (!app.Environment.IsDevelopment())
 app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+SeedDatabase();
 app.MapRazorPages();
 app.UseRouting();
 app.UseAuthentication();
@@ -45,3 +48,12 @@ app.MapControllerRoute(
     pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+void SeedDatabase()
+{
+    using(var scope = app.Services.CreateScope())
+    {
+        var databaseInitializer = scope.ServiceProvider.GetRequiredService<IDbInitializer>();
+        databaseInitializer.Initialize();
+    }
+}

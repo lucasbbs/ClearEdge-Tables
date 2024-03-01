@@ -190,24 +190,24 @@ namespace ClearEdge_Tables.Data
                 }
             );
 
-            var hasher = new PasswordHasher<Customer>();
-            modelBuilder.Entity<Customer>().HasData(
-                new Customer
-                {
-                    Name = "Admin",
-                    Id = "61e5296d-058a-4ea2-a283-69c8a93a407a",
-                    UserName = "admin@example.com",
-                    NormalizedUserName = "ADMIN@EXAMPLE.COM",
-                    Email = "admin@example.com",
-                    NormalizedEmail = "ADMIN@EXAMPLE.COM",
-                    EmailConfirmed = true,
-                    PasswordHash = hasher.HashPassword(null, "secret"),
-                    SecurityStamp = string.Empty
-                });
+            //var hasher = new PasswordHasher<Customer>();
+            //modelBuilder.Entity<Customer>().HasData(
+            //    new Customer
+            //    {
+            //        Name = "Admin",
+            //        Id = "61e5296d-058a-4ea2-a283-69c8a93a407a",
+            //        UserName = "admin@example.com",
+            //        NormalizedUserName = "ADMIN@EXAMPLE.COM",
+            //        Email = "admin@example.com",
+            //        NormalizedEmail = "ADMIN@EXAMPLE.COM",
+            //        EmailConfirmed = true,
+            //        PasswordHash = hasher.HashPassword(null, "secret"),
+            //        SecurityStamp = string.Empty
+            //    });
 
-            // Assign the admin role to the first admin user
-            modelBuilder.Entity<IdentityUserRole<string>>().HasData(
-                new IdentityUserRole<string> { RoleId = "1", UserId = "61e5296d-058a-4ea2-a283-69c8a93a407a" });
+            //// Assign the admin role to the first admin user
+            //modelBuilder.Entity<IdentityUserRole<string>>().HasData(
+            //    new IdentityUserRole<string> { RoleId = "1", UserId = "61e5296d-058a-4ea2-a283-69c8a93a407a" });
         }
     }
     

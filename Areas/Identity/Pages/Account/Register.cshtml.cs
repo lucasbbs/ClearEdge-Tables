@@ -177,11 +177,11 @@ namespace ClearEdge_Tables.Areas.Identity.Pages.Account
             return Page();
         }
 
-        private IdentityUser CreateUser()
+        private ClearEdge_Tables.Models.Customer CreateUser()
         {
             try
             {
-                return Activator.CreateInstance<IdentityUser>();
+                return Activator.CreateInstance<ClearEdge_Tables.Models.Customer>();
             }
             catch
             {
