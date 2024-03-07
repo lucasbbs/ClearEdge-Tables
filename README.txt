@@ -80,7 +80,7 @@ Himani Gajjar
 
 To register a table signin with the following credentials and access Content Management
 username: admin@example.com
-password: secret
+password: Secret123*
 
 2024-02-29 1400
 Initial Migration:
