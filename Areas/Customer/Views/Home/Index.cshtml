@@ -1,7 +1,19 @@
-﻿@model IEnumerable<Table>
+﻿@model ClearEdge_Tables.Models.ViewModels.TableCategoryViewModel
+
+<form asp-area="Customer" asp-controller="Home" asp-action="Index" method="get">
+    <div class="d-flex">
+        <p class="d-flex gap-3 w-100 mr-5 mb-0 py-0">
+            <select class="form-control" asp-for="Category" asp-items="Model.Categories">
+                <option value="">All</option>
+            </select>
+            <label for="search-string">Name:</label><input id="search-string" class="form-control" type="text" asp-for="SearchString" />
+            <input class="btn btn-outline-success" type="submit" value="Filter" />
+        </p>
+    </div>
+</form>
 
     <div class="row pb-3">
-        @foreach(var table in Model)
+        @foreach(var table in Model.Tables)
     {
         <div class="col-lg-3 col-sm-6">
             <div class="row p-2">

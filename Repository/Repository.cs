@@ -34,6 +34,12 @@ namespace ClearEdge_Tables.Repository
             }
             return query.FirstOrDefault();
         }
+
+        public List<T> ListAll() {
+            IQueryable<T> query = Set;
+
+            return query.ToList();
+        }
  
         public IEnumerable<T> GetAll(System.Linq.Expressions.Expression<Func<T, bool>> ? filter = null, string? includeProperties = null)
         {

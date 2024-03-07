@@ -1,7 +1,10 @@
 using ClearEdge_Tables.Models;
+using ClearEdge_Tables.Models.ViewModels;
 using ClearEdge_Tables.Repository.IRepository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Security.Claims;
 
@@ -19,10 +22,26 @@ namespace ClearEdge_Tables.Areas.Customer.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string searchString, string category)
         {
+            List<string> categoryQuery = _unitOfWork.Table.ListAll()
+                .Select(obj => obj.Category).ToList();
             IEnumerable<Table> tableList = _unitOfWork.Table.GetAll();
-            return View(tableList);
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                tableList = tableList.Where(s => s.Name!.Contains(searchString));
+            }
+            if (!string.IsNullOrEmpty(category))
+            {
+                tableList = tableList.Where(x => x.Category == category);
+            }
+
+            var tableCategoryVM = new TableCategoryViewModel
+            {
+                Categories = new SelectList(categoryQuery),
+                Tables = tableList
+            };
+            return View(tableCategoryVM);
         }
 
         public IActionResult Details(int tableId)
