@@ -29,11 +29,14 @@ namespace ClearEdge_Tables.Areas.Customer.Controllers
             IEnumerable<Table> tableList = _unitOfWork.Table.GetAll();
             if (!String.IsNullOrEmpty(searchString))
             {
-                tableList = tableList.Where(s => s.Name!.Contains(searchString));
+                searchString = searchString.ToLower();
+                tableList = tableList.Where(s => s.Name?.ToLower().Contains(searchString) == true);
             }
+
             if (!string.IsNullOrEmpty(category))
             {
-                tableList = tableList.Where(x => x.Category == category);
+                category = category.ToLower();
+                tableList = tableList.Where(x => x.Category?.ToLower() == category);
             }
 
             var tableCategoryVM = new TableCategoryViewModel
