@@ -7,7 +7,7 @@ using System.Security.Claims;
 
 namespace ClearEdge_Tables.Areas.Customer.Controllers
 {
-    [Area("customer")]
+    [Area("Customer")]
     [Authorize]
     public class ShoppingCartController : Controller
     {
