@@ -41,7 +41,7 @@ namespace ClearEdge_Tables.Areas.Customer.Controllers
 
             var tableCategoryVM = new TableCategoryViewModel
             {
-                Categories = new SelectList(categoryQuery),
+                Categories = new SelectList(categoryQuery.Distinct()),
                 Tables = tableList
             };
             return View(tableCategoryVM);
