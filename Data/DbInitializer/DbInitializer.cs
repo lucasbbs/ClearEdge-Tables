@@ -27,8 +27,7 @@ namespace ClearEdge_Tables.Data.DbInitializer
             }catch (Exception ex)
             {}
 
-            if (false) {
-//!_roleManager.RoleExistsAsync("User").GetAwaiter().GetResult() )
+            if (!_roleManager.RoleExistsAsync("User").GetAwaiter().GetResult() )
             {
                 _roleManager.CreateAsync(new IdentityRole("User")).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole("Admin")).GetAwaiter().GetResult();
