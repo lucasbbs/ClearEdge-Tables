@@ -40,6 +40,10 @@ The app is built around five main entities:
 - Add desired tables to the shopping cart and proceed to checkout.
 - Complete the checkout process.
 
+## Authorization and Authentication
+- To register a table you should be authenticated as an admin. That's the authorization admin part. There is only one admin user in the app. It is possible to create more than one, but this is feature is not yet implemented
+- You can browse the products, but to add them to the cart, as well check your cart you shoud be authenticated. That's the authorization for common users. It is possible to create normal users by following the normal process of authentication.
+
 ## Security Measures Implemented
 
 (TO-DO)

@@ -85,3 +85,12 @@ password: Secret123*
 2024-02-29 1400
 Initial Migration:
 20240218044426_InitialMigration
+
+
+2024-03-15 1656
+Resolved a critical issue involving a SqlException: Connection Timeout Expired, ensuring smoother database operations by addressing connectivity timeouts effectively.
+The issue was the methods GetAwaiter().GetResult() on the function Initialize from the class DbInitializer (https://stackoverflow.com/a/34549714). I commented out that code and now everything is working fine.
+
+PRODUCTION: https://clear-edge-tables.azurewebsites.net/
+DEVELOPMENT: https://clear-edge-tables-dev.azurewebsites.net/
+TEST: https://clear-edge-tables-test.azurewebsites.net/
