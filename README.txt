@@ -94,3 +94,11 @@ The issue was the methods GetAwaiter().GetResult() on the function Initialize fr
 PRODUCTION: https://clear-edge-tables.azurewebsites.net/
 DEVELOPMENT: https://clear-edge-tables-dev.azurewebsites.net/
 TEST: https://clear-edge-tables-test.azurewebsites.net/
+
+ADMIN USER CREDENTIALS:
+username: admin@example.com
+password: Secret123*
+
+CUSTOMER USER CREDENTIALS:
+username: user@example.com
+password: User123*
