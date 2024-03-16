@@ -32,7 +32,7 @@ namespace ClearEdge_Tables.Areas.Admin.Controllers
 
             RoleManagementViewModel RoleViewManager = new RoleManagementViewModel()
             {
-                ApplicationUser = _unitOfWork.Customer.Get(u => u.Id == userId),
+                Customer = _unitOfWork.Customer.Get(u => u.Id == userId),
                 RoleList = _roleManager.Roles.Select(i => new SelectListItem
                 {
                     Text = i.Name,
@@ -40,7 +40,7 @@ namespace ClearEdge_Tables.Areas.Admin.Controllers
                 })
             };
 
-            RoleViewManager.ApplicationUser.Role = _userManager.GetRolesAsync(_unitOfWork.Customer.Get(u => u.Id == userId))
+            RoleViewManager.Customer.Role = _userManager.GetRolesAsync(_unitOfWork.Customer.Get(u => u.Id == userId))
                     .GetAwaiter().GetResult().FirstOrDefault();
             return View(RoleViewManager);
         }
@@ -49,19 +49,19 @@ namespace ClearEdge_Tables.Areas.Admin.Controllers
         public IActionResult RoleManagment(RoleManagementViewModel roleManagmentVM)
         {
 
-            string oldRole = _userManager.GetRolesAsync(_unitOfWork.Customer.Get(u => u.Id == roleManagmentVM.ApplicationUser.Id))
+            string oldRole = _userManager.GetRolesAsync(_unitOfWork.Customer.Get(u => u.Id == roleManagmentVM.Customer.Id))
                     .GetAwaiter().GetResult().FirstOrDefault();
 
-            ClearEdge_Tables.Models.Customer applicationUser = _unitOfWork.Customer.Get(u => u.Id == roleManagmentVM.ApplicationUser.Id);
+            ClearEdge_Tables.Models.Customer applicationUser = _unitOfWork.Customer.Get(u => u.Id == roleManagmentVM.Customer.Id);
 
 
-            if (!(roleManagmentVM.ApplicationUser.Role == oldRole))
+            if (!(roleManagmentVM.Customer.Role == oldRole))
             {
                 _unitOfWork.Customer.Update(applicationUser);
                 _unitOfWork.Save();
 
                 _userManager.RemoveFromRoleAsync(applicationUser, oldRole).GetAwaiter().GetResult();
-                _userManager.AddToRoleAsync(applicationUser, roleManagmentVM.ApplicationUser.Role).GetAwaiter().GetResult();
+                _userManager.AddToRoleAsync(applicationUser, roleManagmentVM.Customer.Role).GetAwaiter().GetResult();
 
             }
 
