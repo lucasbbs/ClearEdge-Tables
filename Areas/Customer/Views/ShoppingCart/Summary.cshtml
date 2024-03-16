@@ -1,4 +1,5 @@
 ﻿@model ClearEdge_Tables.Models.ViewModels.ShoppingCartViewModel
+
 <form method="post">
 	<br />
 	<div class="container">
@@ -11,7 +12,7 @@
 						</h5>
 					</div>
 					<div class="col-6 text-end">
-						<a class="btn btn-outline-danger btn-sm">Back to Cart</a>
+						<a asp-action="Index" class="btn btn-outline-dark btn-sm text-auto">Back to Cart</a>
 					</div>
 				</div>
 			</div>
@@ -100,7 +101,7 @@
 								}
 
 								<li class="list-group-item d-flex justify-content-between bg-light">
-									<small class="text-info">Total (USD)</small>
+									<small class="text-info">Total (CAD)</small>
 									<strong class="text-info">@Model.Order.total_amount.ToString("c")</strong>
 								</li>
 							</ul>
