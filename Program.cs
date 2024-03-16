@@ -6,9 +6,14 @@ using ClearEdge_Tables.Repository.IRepository;
 using ClearEdge_Tables.Repository;
 using ClearEdge_Tables.Models;
 using ClearEdge_Tables.Data.DbInitializer;
+using Stripe;
+using System.Globalization;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ClearEdge_TablesContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ClearEdge_TablesContext") ?? throw new InvalidOperationException("Connection string 'ClearEdge_TablesContext' not found.")));
+
+builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(/*options => options.SignIn.RequireConfirmedAccount = true*/).AddEntityFrameworkStores<ClearEdge_TablesContext>().AddDefaultTokenProviders().AddDefaultUI();
 
@@ -24,6 +29,11 @@ builder.Services.AddSession(options => {
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+var cultureInfo = new CultureInfo("en-CA");
+cultureInfo.NumberFormat.CurrencySymbol = "CA$";
+CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -37,6 +47,7 @@ if (!app.Environment.IsDevelopment())
 app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
 SeedDatabase();
 app.MapRazorPages();
 app.UseRouting();
