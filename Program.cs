@@ -1,10 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using ClearEdge_Tables.Data;
 using Microsoft.AspNetCore.Identity;
 using ClearEdge_Tables.Repository.IRepository;
 using ClearEdge_Tables.Repository;
-using ClearEdge_Tables.Models;
 using ClearEdge_Tables.Data.DbInitializer;
 using Stripe;
 using System.Globalization;
