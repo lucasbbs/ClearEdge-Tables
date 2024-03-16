@@ -18,11 +18,25 @@
         <div class="col-lg-3 col-sm-6">
             <div class="row p-2">
                 <div class="col-12 p-1">
-                    <div class="card border-0 p-3 shadow border-top border-5 rounded">
-                        <img src="@table.ImageUrl" class="card-img-top rounded" />
+                    <div class="card border-0 p-3 shadow border-top border-5 rounded" style="height: 400px;">
+                        <div class="card-img-top rounded bg-image d-flex justify-content-center align-items-center"
+                          style="
+                            background-image: url('@table.ImageUrl');
+                            height: 150px !important;
+                            background-size: cover;
+                            background-position: center;
+                          "
+                        >
+                        </div>
+                        @* <img src="@table.ImageUrl" class="card-img-top rounded" /> *@
                         <div class="card-body pb-0">
                             <div class="pl-1">
-                                <p class="card-title h5 text-dark opacity-75 text-uppercase text-center">
+                                <p 
+                                    class="card-title h5 text-dark opacity-75 text-uppercase text-center"
+                                   style="display: -webkit-box;
+                                          -webkit-box-orient: vertical;
+                                          -webkit-line-clamp: 2;
+                                          overflow: hidden;">
                                     @table.Name
                                 </p>
                                 <p class="card-title text-warning text-center">
@@ -31,13 +45,13 @@
                                     </b>
                                 </p>
                             </div>
+                        </div>
+                        <div>
                             <div class="pl-1">
                                 <p class="text-dark text-opacity-75 text-center">
                                     Only @table.Price.ToString("c")
                                 </p>
                             </div>
-                        </div>
-                        <div>
                             <a
                                 asp-route-tableId="@table.Id"
                                 asp-action="Details"
