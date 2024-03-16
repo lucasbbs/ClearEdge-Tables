@@ -15,5 +15,32 @@ namespace ClearEdge_Tables.Repository
         {
             _context.Order.Update(order);
         }
+
+        public void UpdateStatus(int id, string orderStatus, string? paymentStatus = null)
+        {
+            var order = _context.Order.FirstOrDefault(o => o.Id == id);
+            if (order != null)
+            {
+                order.Status = orderStatus;
+                if (!string.IsNullOrEmpty(paymentStatus))
+                {
+                    order.PaymentStatus = paymentStatus;
+                }
+            }
+        }
+
+        public void UpdateStripePaymentId(int id, string sessionId, string stripePaymentId)
+        {
+            var order = _context.Order.FirstOrDefault(o => o.Id == id);
+            if (!string.IsNullOrEmpty(sessionId))
+            {
+                order.SessionId = sessionId;
+            }
+            if (!string.IsNullOrEmpty(stripePaymentId))
+            {
+                order.PaymentDate = DateTime.Now;
+                order.PaymentIntentId = stripePaymentId;
+            }
+        }
     }
 }
