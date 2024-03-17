@@ -20,3 +20,21 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.responsive-browsing-tables {
+    height: 400px;
+}
+
+.table-card-product {
+    height: 150px;
+}
+
+@media (max-width: 540px) {
+    .responsive-browsing-tables {
+        height: 100%;
+    }
+
+    .table-card-product {
+        height: 320px;
+    }
+}
