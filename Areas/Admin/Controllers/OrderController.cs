@@ -10,6 +10,7 @@ using System.Security.Claims;
 namespace ClearEdge_Tables.Areas.Admin.Controllers
 {
     [Area("admin")]
+    [Authorize(Roles = "Admin")]
     public class OrderController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
