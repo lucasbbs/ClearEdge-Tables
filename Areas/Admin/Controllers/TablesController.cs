@@ -8,10 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using ClearEdge_Tables.Data;
 using ClearEdge_Tables.Models;
 using ClearEdge_Tables.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ClearEdge_Tables.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class TablesController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
