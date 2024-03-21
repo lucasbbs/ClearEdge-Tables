@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - clear-edge-tables
+name: Build and deploy ASP.Net Core app to Azure Web App - clear-edge-tables-test
 
 on:
   push:
@@ -40,18 +40,27 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    permissions:
+      id-token: write #This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
           name: .net-app
+      
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_472166FF15484501B12350ED3C7F9666 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1238D0B067164E9A917701A291D17A85 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1F65ACD87236425DBF7432FDBF05181D }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'clear-edge-tables'
+          app-name: 'clear-edge-tables-test'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_08511E1F15B346E292A24EB6765FEC32 }}
           package: .
+          
