@@ -42,7 +42,7 @@ namespace ClearEdge_Tables.Data.DbInitializer
                 State = "Ontario",
                 PostalCode = "23422",
                 City = "Windsor"
-            }, "Secret123*").GetAwaiter().GetResult();
+            }, "Secret123@").GetAwaiter().GetResult();
 
             Customer user = _context.Customer.FirstOrDefault(c => c.Email == "admin@example.com");
              _userManager.AddToRoleAsync(user, "Admin").GetAwaiter().GetResult();
