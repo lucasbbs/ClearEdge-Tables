@@ -78,10 +78,6 @@ Himani Gajjar
 5. The Table Company:
 - size of the table
 
-To register a table signin with the following credentials and access Content Management
-username: admin@example.com
-password: Secret123*
-
 2024-02-29 1400
 Initial Migration:
 20240218044426_InitialMigration
@@ -94,11 +90,3 @@ The issue was the methods GetAwaiter().GetResult() on the function Initialize fr
 PRODUCTION: https://clear-edge-tables.azurewebsites.net/
 DEVELOPMENT: https://clear-edge-tables-dev.azurewebsites.net/
 TEST: https://clear-edge-tables-test.azurewebsites.net/
-
-ADMIN USER CREDENTIALS:
-username: admin@example.com
-password: Secret123*
-
-CUSTOMER USER CREDENTIALS:
-username: user@example.com
-password: User123*
